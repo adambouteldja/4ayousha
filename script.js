@@ -163,11 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- API Communication ---
     const sendData = async (question, answer) => {
-    const sendData = async (question, answer) => {
-    collectAnalytics();
-
-    try {
-        await fetch('https://fourayousha.onrender.com/send', {
+        collectAnalytics();
+      try {
+        const response = await fetch('https://fourayousha.onrender.com/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -178,10 +176,14 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         });
 
+        const data = await response.json();
+        console.log(data);
+
     } catch (err) {
         console.log(err);
     }
-};
+});
+
     // --- Screen & Flow Management ---
     const showScreen = (index) => {
         const current = screens[state.currentScreen];
