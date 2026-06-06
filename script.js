@@ -164,22 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- API Communication ---
     const sendData = async (question, answer) => {
         collectAnalytics();
-        const formData = new FormData();
-        formData.append('question', question);
-        formData.append('answer', answer);
-        formData.append('analytics', JSON.stringify(state.analytics));
-
-        try {
-await fetch('https://fourayousha.onrender.com/send', {
-    method: 'POST',
-    body: formData
-});
-    body: JSON.stringify({
-        chat_id: '7979695376',
-      text: `سؤال:\n${question}\n\nجواب:\n${answer}`
-    })
-});
-
+        
     // --- Screen & Flow Management ---
     const showScreen = (index) => {
         const current = screens[state.currentScreen];
