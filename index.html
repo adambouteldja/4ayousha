@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>4ayousha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="background-container"></div>
+    <div id="cinematic-overlay"></div>
+    <div id="sticker-container"></div>
+
+    <main id="app-container">
+
+        <!-- Screen 0: Password -->
+        <section id="screen-0" class="screen active">
+            <form class="content-wrapper" onsubmit="return false;">
+                <h1 class="title typing-effect-target">الموتباص هو تاريخ ميلادك</h1>
+               <div class="input-container glassmorphic">
+    <input type="password" id="password-input" class="password-input" inputmode="numeric" autocomplete="off">
+</div>
+
+<button id="password-btn" class="btn-continue">اكليكي هنا</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Screen 1: Intro Text -->
+        <section id="screen-1" class="screen">
+            <div class="content-wrapper">
+                <h1 class="title typing-effect-target">يادرى...</h1>
+            </div>
+        </section>
+
+        <!-- Screen 2: Question 1 (Slider) -->
+        <section id="screen-2" class="screen">
+            <div class="content-wrapper">
+                <h2 class="question-text typing-effect-target">شحال نسبة استعدادك لـلباك هذا ؟</h2>
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <input type="range" min="0" max="100" value="50" class="premium-slider" id="q1-slider">
+                        <div class="slider-thumb"></div>
+                        <div class="slider-track-fill"></div>
+                    </div>
+                    <output for="q1-slider" class="slider-output">50%</output>
+                </div>
+                <button class="btn-continue" data-next="3">زيدي اكليكي هنا</button>
+            </div>
+        </section>
+
+        <!-- Screen 3: Follow-up 1 -->
+        <section id="screen-3" class="screen">
+             <div class="content-wrapper">
+                <h1 class="title typing-effect-target">فيها خير إن شاء الله ياك ؟</h1>
+            </div>
+        </section>
+
+        <!-- Screen 4: Question 2 (Input) -->
+        <section id="screen-4" class="screen">
+            <div class="content-wrapper">
+                <h2 class="question-text typing-effect-target">مديلي رقم التسجيل عافاك</h2>
+                <div class="input-container glassmorphic">
+                    <input type="text" id="q2-input" class="text-input" placeholder="كتبي هنا..." inputmode="numeric">
+                </div>
+                <button class="btn-continue" data-next="5">بفففف</button>
+            </div>
+        </section>
+
+        <!-- Screen 5: Question 3 (Textarea) -->
+        <section id="screen-5" class="screen">
+            <div class="content-wrapper">
+                <h2 class="question-text typing-effect-target">تعبتي كيما العام لي فات ولا والفتي؟</h2>
+                <div class="input-container glassmorphic">
+                    <textarea id="q3-textarea" class="text-area" placeholder="عندك حرية التعبير"></textarea>
+                </div>
+                <button class="btn-continue" data-next="6">يادرى</button>
+            </div>
+        </section>
+
+        <!-- Screen 6: Question 4 (Textarea) -->
+        <section id="screen-6" class="screen">
+            <div class="content-wrapper">
+                <h2 class="question-text typing-effect-target">ياك عرفتي الغلطات لي درتيهم من قبل وما يتعادوش بإذن الواحد الأحد ؟</h2>
+                <div class="input-container glassmorphic">
+                    <textarea id="q4-textarea" class="text-area" placeholder="هي باينة بلي ايه بصح عبري"></textarea>
+                </div>
+                <button class="btn-continue" data-next="7">بففف</button>
+            </div>
+        </section>
+
+        <!-- Screen 7: Question 5 (Number) -->
+        <section id="screen-7" class="screen">
+            <div class="content-wrapper">
+                <h2 class="question-text typing-effect-target">شحال متوقعة تدي هذا العام إن شاء الله من 20 ؟</h2>
+                <div class="input-container glassmorphic">
+                    <input type="number" id="q5-input" class="text-input" min="10" max="20" step="0.01" placeholder="16.72" inputmode="decimal">
+                </div>
+                <p id="q5-error" class="error-message">إن شاء الله</p>
+                <button class="btn-continue" data-next="8">p:</button>
+            </div>
+        </section>
+
+        <!-- Screen 8: Question 6 (Textarea) -->
+        <section id="screen-8" class="screen">
+            <div class="content-wrapper">
+                <h2 class="question-text typing-effect-target">واش رايك فالحركة دي ؟ يادرى ، اكتبي اكتبي </h2>
+                <div class="input-container glassmorphic">
+                    <textarea id="q6-textarea" class="text-area" placeholder="عبري مليح من فضلك"></textarea>
+                </div>
+                <button class="btn-continue" data-next="9">هممممم</button>
+            </div>
+        </section>
+
+        <!-- Screen 9: Final Screen -->
+        <section id="screen-9" class="screen">
+            <div class="content-wrapper final-text-container" dir="ltr">
+                <p class="final-text"></p>
+                <p class="final-text"></p>
+                <p class="final-text"></p>
+                <p class="final-text"></p>
+                <button id="final-button" class="btn-continue">مزالك نهار روحي ريحيه</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="stickers.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
