@@ -163,18 +163,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- API Communication ---
     const sendData = async (question, answer) => {
-        collectAnalytics();
-        try {
-    await fetch('https://fourayousha.onrender.com/send', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            question,
-            answer
-        })
-    });
+    const sendData = async (question, answer) => {
+    collectAnalytics();
+
+    try {
+        await fetch('https://fourayousha.onrender.com/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                question: question,
+                answer: answer
+            })
+        });
+
+    } catch (err) {
+        console.log(err);
+    }
+};
     // --- Screen & Flow Management ---
     const showScreen = (index) => {
         const current = screens[state.currentScreen];
