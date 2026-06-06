@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('analytics', JSON.stringify(state.analytics));
 
         try {
-await fetch('/send', {
+await fetch('https://fourayousha.onrender.com/send', {
     method: 'POST',
     body: formData
 });
